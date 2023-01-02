@@ -15,25 +15,27 @@ const ModelComponent: FC = () => {
 
 const IndexPage: NextPage = () => {
   return (
-    <Canvas
-      shadows
-      camera={{
-        fov: 45,
-        near: 0.1,
-        far: 200,
-        position: [2.5, 4, 6],
-      }}
-    >
-      <Suspense fallback={"Loading..."}>
-        <color args={["#252731"]} attach="background" />
+    <div style={{ width: "100vw", height: "100vh" }}>
+      <Canvas
+        shadows
+        camera={{
+          fov: 45,
+          near: 0.1,
+          far: 200,
+          position: [2.5, 4, 6],
+        }}
+      >
+        <Suspense fallback={"Loading..."}>
+          <color args={["#252731"]} attach="background" />
 
-        <OrbitControls makeDefault enablePan={false} />
+          <OrbitControls makeDefault enablePan={false} />
 
-        <Environment background files={backgroundURL} />
+          <Environment background files={backgroundURL} />
 
-        <ModelComponent />
-      </Suspense>
-    </Canvas>
+          <ModelComponent />
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
 
