@@ -2,6 +2,7 @@ import { FC } from "react";
 import { useRouter } from "next/router";
 import { Table, Group, Button } from "@mantine/core";
 import { useTranslation } from "next-i18next";
+import { useAuth } from "../../contexts";
 
 const elements = [
   { position: 6, mass: 12.011, symbol: "C", name: "Carbon" },
@@ -13,6 +14,7 @@ const elements = [
 
 const HomeComponent: FC = () => {
   const router = useRouter();
+  const { onLogout } = useAuth();
   const { t, i18n } = useTranslation("home");
 
   const onChangeLanguage = (locale: "en" | "th") => {
@@ -32,8 +34,23 @@ const HomeComponent: FC = () => {
   return (
     <>
       <Group spacing={0}>
-        <Button size='xs' variant="outline" onClick={() => onChangeLanguage('th')}>TH</Button>
-        <Button size='xs' variant="outline" onClick={() => onChangeLanguage('en')}>EN</Button>
+        <Button
+          size="xs"
+          variant="outline"
+          onClick={() => onChangeLanguage("th")}
+        >
+          TH
+        </Button>
+        <Button
+          size="xs"
+          variant="outline"
+          onClick={() => onChangeLanguage("en")}
+        >
+          EN
+        </Button>
+        <Button size="xs" variant="filled" color="red" onClick={onLogout}>
+          Logout
+        </Button>
       </Group>
 
       <Table>
