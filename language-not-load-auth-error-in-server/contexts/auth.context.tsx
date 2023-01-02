@@ -58,7 +58,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         draft.isAuth = true;
       });
 
-      router.push(`/worlds`, `/worlds`, { locale: i18n.language });
+      router.push('/', '/', { locale: i18n.language });
     } catch (error: any) {
       if (error.isAxiosError) {
         return error.response.data.message;

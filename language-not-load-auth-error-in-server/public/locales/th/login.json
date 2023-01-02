@@ -1,0 +1,8 @@
+{
+    "login_title": "ยินดีต้อนรับสู่ Worldician",
+    "error": {
+        "email_required": "กรุณากรอกอีเมล",
+        "email_invalid": "อีเมลไม่ถูกต้อง",
+        "password_required": "กรุณากรอกรหัสผ่าน"
+    }
+}

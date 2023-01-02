@@ -50,9 +50,11 @@ MyApp.getInitialProps = async (appContext: AppContext) => {
   if (res) {
     try {
       const cookies = CookieUtil.toMap(req?.headers.cookie);
-      if (!cookies.has(CookieUtil.ACCESS_TOKEN) && pathname !== "/login") {
-        res.writeHead(302, { Location: "/login" });
-        res.end();
+      if (!cookies.has(CookieUtil.ACCESS_TOKEN)) {
+        if (pathname !== "/login") {
+          res.writeHead(302, { Location: "/login" });
+          res.end();
+        }
 
         return { ...appProps };
       }

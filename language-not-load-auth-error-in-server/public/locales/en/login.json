@@ -1,0 +1,8 @@
+{
+    "login_title": "Welcome to Worldician",
+    "error": {
+        "email_required": "Email is required",
+        "email_invalid": "Invalid email",
+        "password_required": "Password is required"
+    }
+}
